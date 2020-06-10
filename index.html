@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaunchPad: Weather</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #dd6a4d;">
+          <a class="navbar-brand" href="index.html">
+            <img src="/images/cloud_icon.png" width="40" height="25" class="d-inline-block align-top" alt=""> Weather Around the World
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item actice dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr-only">(current)</span>Plots</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="max_temperature.html">Max Temperature</a>
+                    <a class="dropdown-item" href="humidity.html">Humidity</a>
+                    <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                    <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
+                  </div>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="comparisons.html">
+                  Comparison
+                </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="city_data.html">Data</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="descriptor">
+          <!-- Big screen version-->
+          <div class="row">
+              <div class="col-md-7 col-sm-12" id="project-summary">
+                  <h1 class="data-header">Analysis Summary</h1>
+                  <hr>
+                  <p>The goal of this weather analysis is to determine if there is a visible correlation between a city's latitude and its current observed humidity levels, cloudiness, wind speed, and maximum temperatures. Earth's longitudes range between [-180, 180] degress, while latitudes range between [-90, 90] degrees. Using a number randomizer within these ranges 1,500 lat/lon combinations were created and passed on to the Citipy module to find the nearest city/town.  The matching resulted in 616 city names that were then passed on to the OpenWeather API to extract the weather data used in this analytical project. Not all cities are listed in the OpenWeather API, but in the end 573 cities around the world were used in this analysis. Data was manipulated using Pandas and visualized via Matplotlib. Click away to see the trends!
+
+                  </p>
+              </div>
+
+              <div class="col-md-4 col-sm-12" id="visualization-sample">
+                <h1 class="data-header">Visualizations</h1>
+                <hr>
+                <div class="little-parent-box">
+                  <div class="little-box-1">
+                      <h4 class="little-comp_title">v. Max Temp</h4>
+                      <a href="max_temperature.html">
+                        <img class="img-active" src="images/maxtemp.png" alt="maxtemp_image">
+                      </a>
+                  </div>
+                  <div class="little-box-2">
+                      <h4 class="little-comp_title">v. Humidity</h4>
+                      <a href="humidity.html">
+                        <img class="img-active" src="images/humidity.png" alt="humidity_image">
+                      </a>
+                  </div>
+                  <div class="little-box-3">
+                      <h4 class="little-comp_title">v. Cloudiness</h4>
+                      <a href="cloudiness.html">
+                        <img class="img-active" src="images/cloudiness.png" alt="cloudiness_image">
+                      </a>
+                  </div>
+                  <div class="little-box-4">
+                      <h4 class="little-comp_title">v. Wind Speed</h4>
+                      <a href="wind_speed.html">
+                        <img class="img-active" src="images/wind_speed.png" alt="windspeed_image">
+                      </a>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </div>
+</body>
+</html>
