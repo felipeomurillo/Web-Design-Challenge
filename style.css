@@ -26,6 +26,8 @@ body{
 .descriptor p{
     color: #dd6a4d;
     padding: 1rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
     text-align: justify;
     
 }
